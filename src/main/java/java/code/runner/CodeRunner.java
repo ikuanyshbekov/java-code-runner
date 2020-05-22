@@ -1,10 +1,11 @@
+package java.code.runner;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Method;
 import net.openhft.compiler.CompilerUtils;
 
-public class Main {
+public class CodeRunner {
 
     public static void main(String[] args) {
 
