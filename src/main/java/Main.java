@@ -34,6 +34,5 @@ public class Main {
         if (!writer.toString().isEmpty()) {
             System.err.println(writer.toString());
         }
-        System.exit(0);
     }
 }
