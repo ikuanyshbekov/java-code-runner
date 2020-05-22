@@ -40,7 +40,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>java.code.runner.CodeRunner</mainClass>
+                            <mainClass>unicom.online.coderunner.CodeRunner</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
