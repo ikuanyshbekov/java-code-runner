@@ -29,7 +29,11 @@ public class Main {
             Method mainMethod = clazz.getMethod("main", String[].class);
             mainMethod.invoke(clazz.newInstance(), new Object[]{null});
         } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+        if (!writer.toString().isEmpty()) {
             System.err.println(writer.toString());
         }
+        System.exit(0);
     }
 }
