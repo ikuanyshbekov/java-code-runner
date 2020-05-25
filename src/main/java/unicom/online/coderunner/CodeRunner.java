@@ -2,6 +2,7 @@ package unicom.online.coderunner;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import net.openhft.compiler.CompilerUtils;
 
@@ -29,7 +30,9 @@ public class CodeRunner {
                     .loadFromJava(anonymousClassLoader, className, javaCode, new PrintWriter(writer));
             Method mainMethod = clazz.getMethod("main", String[].class);
             mainMethod.invoke(clazz.newInstance(), new Object[]{null});
-        } catch (Exception e) {
+        } catch (InvocationTargetException e) {
+            System.err.println(e.getTargetException());
+        } catch (ClassNotFoundException | NoSuchMethodException  | SecurityException | InstantiationException | IllegalAccessException  e) {
             System.err.println(e.getMessage());
         }
         if (!writer.toString().isEmpty()) {
